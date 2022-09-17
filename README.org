@@ -1,0 +1,19 @@
+#+title: tesouro.el
+
+Brazilian Portuguese thesaurus for Emacs, queries dicio.com.br using [[https://github.com/ThiagoNelsi/dicio-api][dicio-api]].
+
+Heavily based on [[https://github.com/AnselmC/le-thesaurus.el][github.com/AnselmC/le-thesaurus.el]] (thanks! 😄).
+
+* Installation
+
+tesouro.el is still not in MELPA. I’m still studying how that is done.
+
+* Usage
+
+With your cursor over a word, invoke =M-x tesouro-get-synoynms=. Pick a synonym from the completion buffer and =RET=. tesouro.el does its best to detect if a word is capitalized or uppercase and match its output, but other word cases are not supported yet.
+
+Responses from [[https://dicio.com.br/][dicio.com.br]] are cached; use =tesouro-clear-cache= if you wish to clear the cache.
+
+* Roadmap
+
+- Add package to MELPA.
