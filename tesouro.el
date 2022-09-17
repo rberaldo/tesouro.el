@@ -1,8 +1,8 @@
 ;;; tesouro.el --- Procure sinônimos no dicio.com.br -*- lexical-binding: t; -*-
 
 ;;; Copyleft (Ⓚ) 2022   Rafael Beraldo
-;;; URL TODO
-;;; Version 1.0
+;;; URL: https://github.com/rberaldo/tesouro.el
+;;; Version: 1.0
 ;;; Package-Requires: ((request "0.3.2") (emacs "24.4"))
 
 ;; This program is free software: you can redistribute it and/or
@@ -18,7 +18,7 @@
 ;; You should have received a copy of the GNU General Public License
 ;; along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-;;; Comentary:
+;;; Commentary:
 
 ;;; Queries dicio.com.br for synonyms of a word using @ThiagoNelsi’s
 ;;; dicio-api (https://github.com/ThiagoNelsi/dicio-api)
@@ -26,7 +26,7 @@
 ;;; Heavily based on @AnselmC’s le-thesaurus.el
 ;;; (https://github.com/AnselmC/le-thesaurus.el/)
 
-;;; Code
+;;; Code:
 
 (require 'request)
 
@@ -35,7 +35,7 @@
   "Cache to store previous synonyms.")
 
 (defun tesouro--fetch-synonyms-in-dicio (word)
-  "Ask dicio.com.br for synonyms of WORD and returns a list of synonyms."
+  "Ask dicio.com.br for synonyms of WORD and return a list of synonyms."
   (let ((cached-syns (gethash word tesouro--cache)))
     (if cached-syns
 	cached-syns)
@@ -51,14 +51,14 @@
 	nil))))
 
 (defun tesouro--determine-word-case (word)
-  "Returns if WORD is upcase, capitalized or defaults to downcase."
+  "Return if WORD is upcase, capitalized or defaults to downcase."
   (cond ((equal (upcase word) word) 'upcase)
 	((equal (capitalize word) word) 'capitalized)
 	(t 'downcase)))
 
 ;;; User functions
 
-;;; TODO Improvement: detect if word capitalization and match output.
+;;;###autoload
 (defun tesouro-get-synonyms ()
   "Get synonyms for active word or word under the point."
   (interactive)
@@ -80,10 +80,11 @@
 		    (capitalize replace-text)
 		  replace-text))))))
 
+;;;###autoload
 (defun tesouro-clear-cache ()
   "Clear the synoynm cache for tesouro."
   (interactive)
   (clrhash tesouro--cache))
 
-(provide 'tesouro.el)
+(provide 'tesouro)
 ;;; tesouro.el ends here
