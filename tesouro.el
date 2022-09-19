@@ -1,4 +1,4 @@
-;;; tesouro.el --- Procure sinônimos no dicio.com.br -*- lexical-binding: t; -*-
+;;; tesouro.el --- Search for synonyms in Brazilian Portuguese using dicio.com.br -*- lexical-binding: t; -*-
 
 ;;; Copyleft (Ⓚ) 2022   Rafael Beraldo
 ;;; URL: https://github.com/rberaldo/tesouro.el
