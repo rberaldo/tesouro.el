@@ -10,6 +10,6 @@ tesouro.el is in MELPA! Just install it with =use-package=, for example.
 
 * Usage
 
-With your cursor over a word, invoke =M-x tesouro-get-synoynms=. Pick a synonym from the completion buffer and =RET=. tesouro.el does its best to detect if a word is capitalized or uppercase and match its output, but other word cases are not supported yet.
+With the point over a word, invoke =M-x tesouro-get-synoynms=. Pick a synonym from the completion buffer and =RET=. tesouro.el does its best to detect if a word is capitalized or uppercase and match its output, but other word cases are not supported yet.
 
 Responses from [[https://dicio.com.br/][dicio.com.br]] are cached; use =tesouro-clear-cache= if you wish to clear the cache.
