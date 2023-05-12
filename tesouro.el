@@ -39,7 +39,7 @@
   (let ((cached-syns (gethash word tesouro--cache)))
     (if cached-syns
 	cached-syns)
-    (let* ((thesaurus-base-url "https://significado.herokuapp.com/v2/synonyms/")
+    (let* ((thesaurus-base-url "https://dicio-api-ten.vercel.app/v2/synonyms/")
 	   (request-string (concat thesaurus-base-url word))
 	   (response (request-response-data (request request-string
 					      :parser 'json-read
